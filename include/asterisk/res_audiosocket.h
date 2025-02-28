@@ -39,16 +39,22 @@ extern "C" {
 
 enum ast_audiosocket_msg_kind {
 	/*! \brief Message indicates the channel should be hung up, direction: Sent only. */
-	AST_AUDIOSOCKET_KIND_HANGUP = 0x00,
+	AST_AUDIOSOCKET_KIND_HANGUP  = 0x00,
 
 	/*! \brief Message contains the connection's UUID, direction: Received only. */
-	AST_AUDIOSOCKET_KIND_UUID   = 0x01,
+	AST_AUDIOSOCKET_KIND_UUID    = 0x01,
+
+	/*! \brief Messages contains silence, direction: Sent and received. */
+	AST_AUDIOSOCKET_KIND_SILENCE = 0x02,
+
+	/*! \brief Message contains a DTMF digit, direction: Received only. */
+	AST_AUDIOSOCKET_KIND_DTMF    = 0x03,
 
 	/*! \brief Messages contains audio data, direction: Sent and received. */
-	AST_AUDIOSOCKET_KIND_AUDIO  = 0x10,
+	AST_AUDIOSOCKET_KIND_AUDIO   = 0x10,
 
 	/*! \brief An Asterisk-side error occurred, direction: Received only. */
-	AST_AUDIOSOCKET_KIND_ERROR  = 0xFF,
+	AST_AUDIOSOCKET_KIND_ERROR   = 0xFF,
 };
 
 
